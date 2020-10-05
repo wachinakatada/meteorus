@@ -16,12 +16,14 @@ vcftools --vcf toy.vcf --max-missing 0.7 --recode --recode-INFO-all --stdout > t
 python vcf2rearrange.py toy.l07.vcf rearr_ind.txt
 
 rearr_ind.txt: tab-separated list of the sample names, ind03 and ind17 are not in the list because of the excess missing data
+
 ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind01	ind02	ind04	ind05	ind06	ind07	ind08	ind09
 
 4. count and remove the loci with the excess of heterozygosity (putatively paralogs) and heterozygous loci in haploid males
 python vcf2specific_loci.py toy.l07_rearr.vcf female_male.txt 0.5
 
 [female_male.txt]: tab-separated list of sample names of population to count loci with the excess of heterozygosity (the first line), and list of sample names of males to count heterozygote in haploid male (the second line; can be omitted)
+
 ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind07	ind08	ind09
 ind01	ind02	ind04	ind05	ind06
 
@@ -49,21 +51,39 @@ second column: the frequency of heterozygote in population 1
 third column: the frequency of heterozygote in population 2
 
 1 0.0 0.0
+
 2 0.0 0.142857142857
+
 3 0.0 0.0
+
 4 0.0 0.0
+
 5 0.0 0.0
+
 6 0.0 0.166666666667
+
 7 0.0 0.0
+
 8 0.0 0.0
+
 9 0.0 0.0
+
 10 0.0 0.142857142857
+
 11 0.0 0.0
+
 12 0.0 0.0
+
 13 0.0 0.0
+
 N 13
+
 biallelic 13
+
 missing 0
+
 shared heterozygote: 0
+
 fixed hetero in pop1: 0
+
 fixed hetero in pop2: 0
