@@ -1,0 +1,15 @@
+
+VCFtools - v0.1.13
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf toy.vcf
+	--recode-INFO-all
+	--max-missing 0.7
+	--recode
+	--stdout
+
+After filtering, kept 20 out of 20 Individuals
+Outputting VCF file...
+After filtering, kept 47 out of a possible 50 Sites
+Run Time = 0.00 seconds

@@ -1,0 +1,2 @@
+ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind07	ind08	ind09
+ind01	ind02	ind04	ind05	ind06
