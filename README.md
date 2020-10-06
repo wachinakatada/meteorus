@@ -6,13 +6,13 @@ ind01-ind06: haploid male
 ind07-ind20: diploid female
 
 ### 1. checking missing data (using vcftools)
-'''vcftools --vcf toy.vcf --missing-indv --out toy
-vcftools --vcf toy.vcf --missing-site --out toy'''
+vcftools --vcf toy.vcf --missing-indv --out toy
+vcftools --vcf toy.vcf --missing-site --out toy
 
 ### 2. remove loci with the excess missing data (using vcftools)
 vcftools --vcf toy.vcf --max-missing 0.7 --recode --recode-INFO-all --stdout > toy.l07.vcf
 
-### 3. remove samples with the excess missing data and rearrange the samples (using vcftools)
+### 3. remove samples with the excess missing data and rearrange the samples
 python vcf2rearrange.py toy.l07.vcf rearr_ind.txt
 
 rearr_ind.txt: tab-separated list of the sample names, ind03 and ind17 are not in the list because of the excess missing data
