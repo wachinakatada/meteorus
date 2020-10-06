@@ -1,5 +1,5 @@
 # meteorus
-## Scripts to filter and convert of the vcf file of hymenoptera
+## Scripts for filtering and converting of the vcf file of hymenoptera
 
 toy.vcf, 20 loci, 50 SNPs from 20 individuals
 ind01-ind06: haploid male
