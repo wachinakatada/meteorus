@@ -1,6 +1,10 @@
 # meteorus
 ## Scripts for filtering and converting of the vcf file of hymenoptera
 
+## python 2.7
+## vcftools
+
+### example data
 toy.vcf, 20 loci, 50 SNPs from 20 individuals
 
 ind01-ind06: haploid male
