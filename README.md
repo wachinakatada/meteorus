@@ -2,11 +2,14 @@
 ## Scripts for filtering and converting of the vcf file of hymenoptera
 
 toy.vcf, 20 loci, 50 SNPs from 20 individuals
+
 ind01-ind06: haploid male
+
 ind07-ind20: diploid female
 
 ### 1. checking missing data (using vcftools)
 vcftools --vcf toy.vcf --missing-indv --out toy
+
 vcftools --vcf toy.vcf --missing-site --out toy
 
 ### 2. remove loci with the excess missing data (using vcftools)
@@ -52,7 +55,9 @@ python vcf2count_hetero.py toy.l07_re_ch_unlink.vcf population.txt
 population.txt: tab-separated list of the sample names in two populations (population 1: first line, population 2: second line)
 
 first column: snp #
+
 second column: the frequency of heterozygote in population 1
+
 third column: the frequency of heterozygote in population 2
 
 1 0.0 0.0
