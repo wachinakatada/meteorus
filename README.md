@@ -10,7 +10,7 @@ vcftools
 ### example data
 toy.vcf, 20 loci, 50 SNPs from 20 individuals
 
-> ind01-ind06: haploid male <br>
+> ind01-ind06: haploid male, but called as diploid <br>
 > ind07-ind20: diploid female
 
 ### 1. checking missing data (using vcftools)
@@ -30,7 +30,7 @@ vcftools --vcf toy.vcf --max-missing 0.7 --recode --recode-INFO-all --stdout > t
 python vcf2rearrange.py toy.l07.vcf rearr_ind.txt
 ```
 
->rearr_ind.txt: tab-separated list of the sample names, ind03 and ind17 are not in the list because of the excess missing data
+>rearr_ind.txt: tab-separated list of the sample names, ind03 and ind17 are not in the list because of the excess missing data  
 >line 1: ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind01	ind02	ind04	ind05	ind06	ind07	ind08	ind09
 
 ### 4. count and remove the loci with the excess of heterozygosity (putatively paralogs) and heterozygous loci in haploid males
