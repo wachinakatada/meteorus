@@ -45,7 +45,7 @@ python vcf2specific_loci.py toy.l07_rearr.vcf female_male.txt 0.5
 
 `0.5`: max heterozygosity in the population defined in the first line of "female_male.txt".
 
-45 sites were retained after the paralog filtering, 32 sites were retained after filtering for heterozygote in haploid male from toy.l07_rearr.vcf
+45 sites were retained after the paralog filtering, 32 sites were retained after filtering for heterozygote in haploid male from `toy.l07_rearr.vcf`.
  
 > N of Loci: 47  
 > Biallelic site: 47  
@@ -53,28 +53,29 @@ python vcf2specific_loci.py toy.l07_rearr.vcf female_male.txt 0.5
 > Hetero in male: 32  
 
 ### 5. extract the first snp from each locus
+```
 python vcf2unlinked.py toy.l07_rearr_chosen.vcf > toy.l07_re_ch_unlink.vcf
+```
 
 ### 6. convert to the STRUCTURE format
+```
 python vcf2str.py toy.l07_re_ch_unlink.vcf
+```
 
 ### 7. obtain the frequency of heterozygote in the defined two populations 
+```
 python vcf2count_hetero.py toy.l07_re_ch_unlink.vcf population.txt
+```
 
-population.txt: tab-separated list of the sample names in two populations (population 1: first line, population 2: second line)
+`population.txt`: tab-separated list of the sample names in two populations (population 1: first line, population 2: second line)
 
-first column: snp #
+first column: snp #  
+second column: the frequency of heterozygote in population 1  
+third column: the frequency of heterozygote in population 2  
 
-second column: the frequency of heterozygote in population 1
-
-third column: the frequency of heterozygote in population 2
-
-1 0.0 0.0
-
-2 0.0 0.142857142857
-
-3 0.0 0.0
-
+> 1 0.0 0.0  
+> 2 0.0 0.142857142857  
+> 3 0.0 0.0
 4 0.0 0.0
 
 5 0.0 0.0
