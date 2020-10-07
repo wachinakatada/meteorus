@@ -10,14 +10,16 @@ vcftools
 ### example data
 toy.vcf, 20 loci, 50 SNPs from 20 individuals
 
-ind01-ind06: haploid male
+> ind01-ind06: haploid male
 
-ind07-ind20: diploid female
+> ind07-ind20: diploid female
 
 ### 1. checking missing data (using vcftools)
+```
 vcftools --vcf toy.vcf --missing-indv --out toy
 
 vcftools --vcf toy.vcf --missing-site --out toy
+```
 
 ### 2. remove loci with the excess missing data (using vcftools)
 vcftools --vcf toy.vcf --max-missing 0.7 --recode --recode-INFO-all --stdout > toy.l07.vcf
