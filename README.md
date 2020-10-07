@@ -8,9 +8,9 @@ python 2.7
 vcftools
 
 ### example data
-toy.vcf, 20 loci, 50 SNPs from 20 individuals
+`toy.vcf`: 20 loci, 50 SNPs from 20 individuals
 
-> ind01-ind06: haploid male, but called as diploid <br>
+> ind01-ind06: haploid male, but called as diploid  
 > ind07-ind20: diploid female
 
 ### 1. checking missing data (using vcftools)
@@ -30,29 +30,27 @@ vcftools --vcf toy.vcf --max-missing 0.7 --recode --recode-INFO-all --stdout > t
 python vcf2rearrange.py toy.l07.vcf rearr_ind.txt
 ```
 
->rearr_ind.txt: tab-separated list of the sample names, ind03 and ind17 are not in the list because of the excess missing data  
->line 1: ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind01	ind02	ind04	ind05	ind06	ind07	ind08	ind09
+`rearr_ind.txt`: tab-separated list of the sample names, ind03 and ind17 are not in the list because of the excess missing data  
+> line 1: ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind01	ind02	ind04	ind05	ind06	ind07	ind08	ind09
 
 ### 4. count and remove the loci with the excess of heterozygosity (putatively paralogs) and heterozygous loci in haploid males
+```
 python vcf2specific_loci.py toy.l07_rearr.vcf female_male.txt 0.5
+```
 
-female_male.txt: tab-separated list of sample names of population to count loci with the excess of heterozygosity (the first line), and list of sample  names of males to count heterozygote in haploid male (the second line; can be omitted)
+`female_male.txt`: tab-separated list of sample names of population to count loci with the excess of heterozygosity (the first line), and list of sample  names of males to count heterozygote in haploid male (the second line; can be omitted)
 
-line 1: ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind07	ind08	ind09
+> line 1: ind10	ind11	ind12	ind13	ind14	ind15	ind16	ind18	ind19	ind20	ind07	ind08	ind09  
+> line 2: ind01	ind02	ind04	ind05	ind06
 
-line 2: ind01	ind02	ind04	ind05	ind06
-
-0.5: max heterozygosity in the population defined in the first line of "female_male.txt".
+`0.5`: max heterozygosity in the population defined in the first line of "female_male.txt".
 
 45 sites were retained after the paralog filtering, 32 sites were retained after filtering for heterozygote in haploid male from toy.l07_rearr.vcf
  
-N of Loci: 47
- 
-Biallelic site: 47
- 
-Putative paralog: 45
- 
-Hetero in male: 32
+> N of Loci: 47  
+> Biallelic site: 47  
+> Putative paralog: 45  
+> Hetero in male: 32  
 
 ### 5. extract the first snp from each locus
 python vcf2unlinked.py toy.l07_rearr_chosen.vcf > toy.l07_re_ch_unlink.vcf
