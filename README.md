@@ -75,35 +75,21 @@ third column: the frequency of heterozygote in population 2
 
 > 1 0.0 0.0  
 > 2 0.0 0.142857142857  
-> 3 0.0 0.0
-4 0.0 0.0
+> 3 0.0 0.0  
+> 4 0.0 0.0  
+> 5 0.0 0.0  
+> 6 0.0 0.166666666667  
+> 7 0.0 0.0  
+> 8 0.0 0.0  
+> 9 0.0 0.0  
+> 10 0.0 0.142857142857  
+> 11 0.0 0.0  
+> 12 0.0 0.0  
+> 13 0.0 0.0  
 
-5 0.0 0.0
-
-6 0.0 0.166666666667
-
-7 0.0 0.0
-
-8 0.0 0.0
-
-9 0.0 0.0
-
-10 0.0 0.142857142857
-
-11 0.0 0.0
-
-12 0.0 0.0
-
-13 0.0 0.0
-
-N 13
-
-biallelic 13
-
-missing 0
-
-shared heterozygote: 0
-
-fixed hetero in pop1: 0
-
-fixed hetero in pop2: 0
+> N 13  
+> biallelic 13  
+> missing 0  
+> shared heterozygote: 0  
+> fixed hetero in pop1: 0  
+> fixed hetero in pop2: 0  
