@@ -10,7 +10,7 @@ vcftools
 ### example data
 toy.vcf, 20 loci, 50 SNPs from 20 individuals
 
-> ind01-ind06: haploid male\n
+> ind01-ind06: haploid male <br>
 > ind07-ind20: diploid female
 
 ### 1. checking missing data (using vcftools)
